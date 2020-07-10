@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Регистрация</h1>
+    <form action="/registration" method="post" modelAttribute="userForm">
+        <input type="text" name="username" placeholder="Введите логин" class="form-control">
+        <h2 th:utext="${usernameError}">..!..</h2>
+        <br>
+        <input type="password" name="password" placeholder="Введите пароль" class="form-control"><br>
+        <input type="password" name="passwordConfirm" placeholder="Подтвердите пароль" class="form-control">
+        <h2 th:utext="${passwordError}">..!..</h2><br>
+        <button type="submit" class="btn btn-success">Добавить статью</button>
+    </form>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>
