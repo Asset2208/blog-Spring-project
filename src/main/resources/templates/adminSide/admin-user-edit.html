@@ -14,6 +14,9 @@
         <form method="post">
             <p th:text="${el.username}"/><br>
             <input type="text" th:value="${el.password}" name="password" placeholder="Введите новый пароль" class="form-control"><br>
+            <div th:each="role : ${roles}">
+                <label><input type="checkbox" name="myroles" th:text="${role.name}" th:value="${role.name}" th:checked="${#lists.contains(el.roles, role)}"/></label>
+            </div>
             <button type="submit" class="btn btn-success">Обновить</button>
         </form>
     </div>
